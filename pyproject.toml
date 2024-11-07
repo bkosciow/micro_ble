@@ -1,0 +1,4 @@
+[project]
+name = "micro_ble"
+version = "0.1"
+description = "Helper for interacting with BLE devices"
