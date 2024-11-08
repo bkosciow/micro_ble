@@ -28,6 +28,9 @@ class DeviceManager:
     def add(self, device):
         self.devices.append(device)
 
+    def remove(self, device):
+        self.devices.remove(device)
+
     def count_devices(self):
         return len(self.devices)
 
@@ -76,12 +79,8 @@ class DeviceManager:
             except btle.BTLEDisconnectError as e:
                 logger.debug("Dropping device %s ", p.device.addr)
                 self.remove(p)
-            # except
 
         return self.get_data_from_devices()
-
-    def remove(self, device):
-        self.devices.remove(device)
 
     def get_data_from_devices(self):
         ret = {}
